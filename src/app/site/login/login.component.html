@@ -1,0 +1,22 @@
+<div id="container">
+  
+  <div id="gallerySection">
+    Text/image gallery here
+  </div>
+
+  <div id="loginSection">
+    <form>
+      <div class="field">
+        <input name="txtOrgenizationId" type="text" [(ngModel)]="txtOrgenizationId" placeholder="Orgenization ID">
+      </div>
+      <div class="field">
+        <input name="txtUserName" type="text" [(ngModel)]="txtUserName" placeholder="User Name">
+      </div>
+      <div class="field">
+        <input name="txtTempPassword" type="text" [(ngModel)]="txtTempPassword" placeholder="Temporery Password">
+      </div>  
+      <div id="btnLogin" (click)="doLogin()">Login</div>
+    </form>
+  </div>
+  
+</div>

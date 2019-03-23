@@ -1,0 +1,47 @@
+#container {
+	
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	height: 65vh;
+
+	#gallerySection {
+		width: 30vw;
+		background-color: #2DA5F3;
+		color: #ffffff;
+	}
+
+	#loginSection {
+		width: 30vw;
+		background-color: #ffffff;
+
+		form {
+			width:28vw;
+			margin:0 auto;
+
+			.field {
+				margin: 20px 0;
+
+				input {
+					outline: none !important;
+					width:27vw;
+					height:8vh;
+					border:solid 1px #EAEAEA;
+					border-radius: 20px;
+					padding: 0 0 0 10px;
+				}
+			}
+
+			#btnLogin {
+				background-color: #2DA5F3;
+				color: #ffffff;
+				border-radius: 25px;
+				width: 10vw;
+				text-align: center;
+				margin: 0 auto;
+				padding: 3vh 0;
+				cursor: pointer;
+			}
+		}
+	}
+}

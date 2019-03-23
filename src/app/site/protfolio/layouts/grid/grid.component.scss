@@ -1,0 +1,36 @@
+#container {
+	width:90%;margin:0 auto;
+
+	#searchBar {
+		margin: 2vh 0;
+
+		#drpProtfolioType {
+			height:3.5vh;
+			margin: 0 0 0 5px;
+		}
+	}
+
+	table {
+		width:100%;
+		thead {
+			background-color: #2B7FBE;color:white;
+			
+			tr {
+				th {
+					border:none;text-align: center;height: 4vh;
+				}
+			}
+		}
+	
+		tbody {
+			tr {
+				height: 4vh;
+	
+				td {
+					border-bottom:solid 1px gray;text-align: center;
+				}
+			}
+			
+		}
+	}
+}

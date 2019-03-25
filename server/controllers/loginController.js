@@ -1,20 +1,21 @@
-require('../modules/about.module')
-const mongoose = require('mongoose');
-const About = mongoose.model('About');
 const express = require('express');
 
-var router = express.Router();
+let router = express.Router();
 
-
-
-router.get('/', (req, res) => {
-	res.json("this is login");
+router.post('/', (req, res) => {
 	checkLogin(req, res);
 });
 
 
 function checkLogin(req, res) {	
-	
+	let bodyObj = req.body;
+	let result = {status:500};
+	if (bodyObj.orgId !== '' && bodyObj.userName !== '' && bodyObj.password !== '')
+	{
+		result = {status:200};
+	}
+	throw Error("dddd"); // sample
+	res.json(result);
 }
 
 module.exports = router;

@@ -7,13 +7,13 @@
   <div id="loginSection">
     <form>
       <div class="field">
-        <input name="txtOrgenizationId" type="text" [(ngModel)]="txtOrgenizationId" placeholder="Orgenization ID">
+        <input name="txtOrgenizationId" type="text" [(ngModel)]="loginObj.orgId" placeholder="Orgenization ID">
       </div>
       <div class="field">
-        <input name="txtUserName" type="text" [(ngModel)]="txtUserName" placeholder="User Name">
+        <input name="txtUserName" type="text" [(ngModel)]="loginObj.password" placeholder="User Name">
       </div>
       <div class="field">
-        <input name="txtTempPassword" type="text" [(ngModel)]="txtTempPassword" placeholder="Temporery Password">
+        <input name="txtTempPassword" type="text" [(ngModel)]="loginObj.userName" placeholder="Temporery Password">
       </div>  
       <div id="btnLogin" (click)="doLogin()">Login</div>
     </form>

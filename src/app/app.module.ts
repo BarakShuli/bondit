@@ -9,7 +9,6 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './site/login/login.component';
 import { MainComponent } from './site/protfolio/main/main.component';
 import { HeaderComponent } from './site/protfolio/header/header.component';
-import { SearchBarComponent } from './site/protfolio/layouts/search-bar/search-bar.component';
 import { GridComponent } from './site/protfolio/layouts/grid/grid.component';
 import { APIResolver } from './site/protfolio/main/protfolios.resolver';
 import { FilterByProtfolioTypePipe } from './pipes/filterByType/filter-by-protfolio-type.pipe';
@@ -25,7 +24,6 @@ import { GetUniqeTypeListPipe } from './pipes/getUniqeProtfolioTypeList/get-uniq
     MainComponent,
     GridComponent,
     HeaderComponent,
-    SearchBarComponent,
     FilterByProtfolioTypePipe,
     GetUniqeTypeListPipe
   ],

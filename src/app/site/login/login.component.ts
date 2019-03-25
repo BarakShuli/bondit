@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from 'src/app/service/api.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -6,17 +8,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  txtOrgenizationId: string = "";
-  txtUserName: string = "";
-  txtTempPassword: string = "";
+  loginObj:object = {
+    orgId: "",
+    password: "",
+    userName: ""
 
-  constructor() { }
+  };
 
-  ngOnInit() {
-  }
+  constructor(private apiService: ApiService, private router: Router) { }
+
+  ngOnInit() {}
 
   doLogin() {
-    console.log(this.txtOrgenizationId, this.txtTempPassword, this.txtUserName);
+    this.apiService.doDoLogin(this.loginObj).subscribe(data => {
+      if(data["status"] === 200) {
+        this.router.navigate(['protfolios']);
+      }
+    });
   }
 
 }

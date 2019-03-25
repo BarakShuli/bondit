@@ -4,8 +4,17 @@ const loginController = require('./controllers/loginController');
 const protfolioController = require('./controllers/protfolioController');
 const dataController = require('./controllers/dataController');
 const metadataController = require('./controllers/metadataController');
+const bodyParser = require("body-parser");
 
-var app = express();
+let app = express();
+let baseUrl = '/api/v1/';
+
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
+
+app.use(bodyParser.json());
+
 app.all("/*", function(req, res, next){
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
@@ -13,13 +22,12 @@ app.all("/*", function(req, res, next){
   next();
 });
 
-
 app.listen(3000, () => {
 	console.log('node server is running');
 });
 
-app.use('/api/v1/login', loginController);
-app.use('/api/v1/my_portfolios/portfolios', protfolioController);
-app.use('/api/v1/my_portfolios/data', dataController);
-app.use('/api/v1/my_portfolios/metadata', metadataController);
+app.use(baseUrl+'login', loginController);
+app.use(baseUrl+'my_portfolios/portfolios', protfolioController);
+app.use(baseUrl+'my_portfolios/data', dataController);
+app.use(baseUrl+'my_portfolios/metadata', metadataController);
 

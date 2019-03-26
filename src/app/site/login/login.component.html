@@ -7,13 +7,16 @@
   <div id="loginSection">
     <form>
       <div class="field">
-        <input name="txtOrgenizationId" type="text" [(ngModel)]="loginObj.orgId" placeholder="Orgenization ID">
+        <input #name="ngModel" name="txtOrgenizationId" type="text" [(ngModel)]="loginObj.orgId" placeholder="Orgenization ID" required minlength="4" >
+      </div>
+      <div *ngIf="name.errors.required">
+        Name is required.
       </div>
       <div class="field">
-        <input name="txtUserName" type="text" [(ngModel)]="loginObj.password" placeholder="User Name">
+        <input name="txtUserName" type="text" [(ngModel)]="loginObj.password" placeholder="User Name" required>
       </div>
       <div class="field">
-        <input name="txtTempPassword" type="text" [(ngModel)]="loginObj.userName" placeholder="Temporery Password">
+        <input name="txtTempPassword" type="text" [(ngModel)]="loginObj.userName" placeholder="Temporery Password" required>
       </div>  
       <div id="btnLogin" (click)="doLogin()">Login</div>
     </form>
